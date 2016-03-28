@@ -45,6 +45,35 @@ var app = {
 		console.log('Frameworks initialized');
 	}
 };
+function openBrowser(site){
+    var ref = window.open(site, '_blank', 'location=yes');
+    ref.addEventListener('loadstart', function(event) {  });
+};
+function geo(){
+    // onSuccess Callback
+    // This method accepts a Position object, which contains the
+    // current GPS coordinates
+    //
+    var onSuccess = function(position) {
+        $('#location').html('Latitude: '          + position.coords.latitude          + '<br />' +
+                'Longitude: '         + position.coords.longitude         + '<br />' +
+                'Altitude: '          + position.coords.altitude          + '<br />' +
+                'Accuracy: '          + position.coords.accuracy          + '<br />' +
+                'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '<br />' +
+                'Heading: '           + position.coords.heading           + '<br />' +
+                'Speed: '             + position.coords.speed             + '<br />' +
+                'Timestamp: '         + position.timestamp                + '<br />');
+    };
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
+
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+};
 
 app.initialize();
     

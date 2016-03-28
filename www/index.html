@@ -20,16 +20,55 @@
 <body>
     <div data-role="page">
         <div data-role="header" data-theme="a">
-            <h1>Single-Page Application </h1>
+        	<h1>Final Week</h1>
+        	<div data-role="navbar" id="navbar-1" data-iconpos="left">
+        		<ul>
+        			<li>
+        				<a href="#" data-icon="home">Home</a>
+        			</li>
+        			<li>
+        				<a href="#" data-icon="info">About</a>
+        			</li>
+        			<li>
+        				<a href="#" data-icon="mail">Contact</a>
+        			</li>
+        		</ul>
+        	</div>
         </div><!-- /header -->
 
         <div data-role="content" data-theme="a">
-            <p>This is a single page boilerplate template that you can copy to build your first jQuery Mobile page.</p>
-                <canvas width="" height="300"></canvas>
+        	<div class="ui-field-contain">
+        		<label for="mail01">Email</label>
+        		<input name="mail01" id="mail01" data-clear-btn="true"
+        			value="Enter email" type="email" />
+        	</div>
+        	<div class="ui-field-contain">
+        		<label for="pass01">Password</label>
+        		<input name="pass01" id="pass01" data-clear-btn="true"
+        			value="Enter password" type="password" />
+        	</div>
+        	<ul data-role="listview" id="listview-1"
+        		data-inset="true">
+        		<li data-role="list-divider">Stars</li>
+        		<li>
+        			<a onclick="openBrowser('https://en.wikipedia.org/wiki/Five_Star')" href="#">
+        				5 Stars
+        			</a>
+        		</li>
+        		<li>
+        			<a onclick="openBrowser('https://en.wikipedia.org/wiki/Four_star')" href="#">
+        				4 Stars
+        			</a>
+        		</li>
+        	</ul>
+        	<a onclick="geo()" href="#" id="locationBtn" class="ui-btn ui-icon-location ui-btn-icon-left ui-btn-inline ui-corner-all">
+        		Get Location
+        	</a>
+        	<div id="location" data-role="fieldcontain"></div>
         </div><!-- /content -->
 
         <div data-role="footer" data-position="fixed" data-theme="a">
-            <h4>Footer content</h4>
+            <h4>&copy; Dave</h4>
         </div><!-- /footer -->
     </div><!-- /page -->
 </body>
